@@ -28,16 +28,11 @@ let layerControl = L.control.layers({
 layerControl.expand();
 
 //Marker
-let mutterbergersee = {
-    lat: 47.0166667,
-    lng: 11.129,
-    title: "Mutterbergersee"
+var mutterbergersee_icon = L.icon({
+    iconUrl: 'icons/photospot.png',
+});
 
-};
-L.marker([
-    mutterbergersee.lat, mutterbergersee.lng
-]).addTo(map).bindPopup(mutterbergersee.title).openPopup();
-
+L.marker([47.0166667, 11.129], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Mutterbergersee").openPopup();
 
 // Maßstab
 L.control.scale({
