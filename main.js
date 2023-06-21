@@ -30,6 +30,9 @@ layerControl.expand();
 //Marker
 var mutterbergersee_icon = L.icon({
     iconUrl: 'icons/photospot.png',
+    iconAnchor: [16, 37],
+    popupAnchor: [0, -37],
+
 });
 
 L.marker([47.0166667, 11.129], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Mutterbergersee").openPopup();
