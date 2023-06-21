@@ -27,7 +27,7 @@ let layerControl = L.control.layers({
 ).addTo(map);
 layerControl.expand();
 
-//Marker
+//Marker Mutterbergersee
 var mutterbergersee_icon = L.icon({
     iconUrl: 'icons/photospot.png',
     iconAnchor: [16, 37],
@@ -36,6 +36,18 @@ var mutterbergersee_icon = L.icon({
 });
 
 L.marker([47.0166667, 11.129], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Mutterbergersee").openPopup();
+
+//Marker Lichtsee
+
+L.marker([47.031409, 11.405618], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Lichtsee").openPopup();
+
+//Marker Sattelberg
+
+L.marker([47.010163, 11.477516], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Sattelberg").openPopup();
+
+//Marker Steinplatte/Winklmoosalm
+
+L.marker([47.657560, 12.579869], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Winklmoos/Steinplatte").openPopup();
 
 // Maßstab
 L.control.scale({
