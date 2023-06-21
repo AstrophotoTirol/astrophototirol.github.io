@@ -2,8 +2,8 @@
 
 // Tirol
 let tirol = {
-    lat: 47.267222,
-    lng: 11.392778
+    lat: 47.016373041058536,
+    lng: 11.128455394230476
 };
 
 // Karte initialisieren
@@ -26,6 +26,18 @@ let layerControl = L.control.layers({
 }, 
 ).addTo(map);
 layerControl.expand();
+
+//Marker
+let mutterbergersee = {
+    lat: 47.0166667,
+    lng: 11.129,
+    title: "Mutterbergersee"
+
+};
+L.marker([
+    mutterbergersee.lat, mutterbergersee.lng
+]).addTo(map).bindPopup(mutterbergersee.title).openPopup();
+
 
 // Maßstab
 L.control.scale({
