@@ -35,7 +35,9 @@ var mutterbergersee_icon = L.icon({
 
 });
 
-L.marker([47.0166667, 11.129], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Mutterbergersee").openPopup();
+L.marker([47.0166667, 11.129], {icon: mutterbergersee_icon}).addTo(map).bindPopup(`
+    <img src = "images/mutterberger.png" alt = "*")>
+    <h4><a ref = "Mutterbergersee"</a></h4>`).openPopup();
 
 //Marker Lichtsee
 
