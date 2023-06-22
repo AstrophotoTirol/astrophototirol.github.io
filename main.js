@@ -12,10 +12,6 @@ let map = L.map("map", {
     maxZoom: 20
 }).setView([tirol.lat, tirol.lng], 8);
 
-// thematische Layer
-let themaLayer = {
-    lichverschmutzung: L.featureGroup(),
-}
 
 // Hintergrundlayer
 let layerControl = L.control.layers({
