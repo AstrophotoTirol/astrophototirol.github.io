@@ -22,8 +22,28 @@ let layerControl = L.control.layers({
     
     "Openstreetmap": L.tileLayer.provider("OpenStreetMap.Mapnik").addTo(map),
     "Esri WorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
-    "Esri WorldImagery": L.tileLayer.provider("Esri.WorldImagery")
-}, 
+    "Esri WorldImagery": L.tileLayer.provider("Esri.WorldImagery"),
+    "Lichtverschmutzung 2016": L.tileLayer(
+        'https://djlorenz.github.io/astronomy/lp2016/overlay/tiles/tile_{z}_{x}_{y}.png', {
+         minZoom: 2,
+         maxNativeZoom: 8,
+         maxZoom: 19,
+         tileSize: 1024,
+         zoomOffset: -2,
+         opacity: 0.5
+        }),  
+
+    "Lichtverschmutzung 2020": L.tileLayer(
+        'https://djlorenz.github.io/astronomy/lp2020/overlay/tiles/tile_{z}_{x}_{y}.png', {
+         minZoom: 2,
+         maxNativeZoom: 8,
+         maxZoom: 19,
+         tileSize: 1024,
+         zoomOffset: -2,
+         opacity: 0.5
+        }),
+    }, 
+
 ).addTo(map);
 layerControl.expand();
 
@@ -36,8 +56,10 @@ var mutterbergersee_icon = L.icon({
 });
 
 L.marker([47.0166667, 11.129], {icon: mutterbergersee_icon}).addTo(map).bindPopup(`
-    <img src = "images/mutterberger.png" alt = "*")>
-    <h4><a ref = "Mutterbergersee"</a></h4>`).openPopup();
+    <h4>Mutterbergersee</h4>
+    <img src = "images/mutterberger_250px.png" alt = "Mutterbergersee")>
+    `).openPopup()
+    
 
 //Marker Lichtsee
 
