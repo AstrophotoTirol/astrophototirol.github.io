@@ -51,23 +51,35 @@ var mutterbergersee_icon = L.icon({
 
 });
 
-L.marker([47.0166667, 11.129], {icon: mutterbergersee_icon}).addTo(map).bindPopup(`
+L.marker([47.0166667, 11.129], { icon: mutterbergersee_icon }).addTo(map).bindPopup(`
     <h4>Mutterbergersee</h4>
     <img src = "images/mutterberger_250px.png" alt = "Mutterbergersee")>
+    <p></p>
+    <a href = "https://astrophototirol.github.io/Mutterbergersee/" > Hier gehts zum Spot -> </a>
     `).openPopup()
-    
+
 
 //Marker Lichtsee
 
-L.marker([47.031409, 11.405618], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Lichtsee").openPopup();
+L.marker([47.031409, 11.405618], { icon: mutterbergersee_icon }).addTo(map).bindPopup(`<h4>Lichtsee</h4>
+<img src = "images/lichtsee_250px.png" alt = "Lichtsee")>
+<p></p>
+<a href = "https://astrophototirol.github.io/Lichtsee/" > Hier gehts zum Spot -> </a>
+`).openPopup();
 
 //Marker Sattelberg
 
-L.marker([47.010163, 11.477516], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Sattelberg").openPopup();
+L.marker([47.010163, 11.477516], { icon: mutterbergersee_icon }).addTo(map).bindPopup(`<h4>Sattelberg</h4>
+<img src = "images/sattelberg_250px.png" alt = "Sattelberg")>
+<p></p>
+<a href = "https://astrophototirol.github.io/Sattelberg/" > Hier gehts zum Spot -> </a>`).openPopup();
 
 //Marker Steinplatte/Winklmoosalm
 
-L.marker([47.657560, 12.579869], {icon: mutterbergersee_icon}).addTo(map).bindPopup("Winklmoos/Steinplatte").openPopup();
+L.marker([47.657560, 12.579869], { icon: mutterbergersee_icon }).addTo(map).bindPopup(`<h4>Winklmoos/Steinplatte</h4>
+<img src = "images/winklmoos_250px.png" alt = "Winkmoos")>
+<p></p>
+<a href = "https://astrophototirol.github.io/Winklmoos/" > Hier gehts zum Spot -> </a>`).openPopup();
 
 // Maßstab
 L.control.scale({
