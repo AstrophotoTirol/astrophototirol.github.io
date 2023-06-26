@@ -29,6 +29,7 @@ header {
 header h2 {
     margin: 0;
     color: white;
+    
 }
 
 header nav {
@@ -40,8 +41,11 @@ header nav {
 }
 
 article {
+    text-align: justify;
     margin-top: 0.5em;
     color: white;
+    text-size-adjust: auto;
+    
 }
 
 #map {
@@ -73,6 +77,8 @@ footer nav {
         -1px 1px 0 white,
          1px -1px 0 white,
          1px 1px 0 white,
+    
+    
     
 
 
