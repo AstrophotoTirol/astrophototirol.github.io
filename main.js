@@ -97,7 +97,35 @@ L.control.scale({
     imperial: false,
 }).addTo(map);
 
+// Create the image overlay
+let imageBounds = [[0, 0], [window.innerHeight, window.innerWidth]];
+let imageUrl = 'images/Unbenanntes_Panorama-1.jpg'; // Replace with the path to your actual large image file
+let imageOverlay = L.imageOverlay(imageUrl, imageBounds);
 
+// Create the image frame map
+let imageFrameMap = L.map('superzoom', {
+  crs: L.CRS.Simple,
+  zoomControl: false
+});
+
+// Set the max bounds of the image frame map to match the image bounds
+imageFrameMap.setMaxBounds(imageBounds);
+
+// Adjust image bounds on window resize
+window.addEventListener('resize', () => {
+  imageBounds = [[0, 0], [window.innerHeight, window.innerWidth]];
+  imageOverlay.setBounds(imageBounds);
+  imageFrameMap.setMaxBounds(imageBounds);
+});
+
+// Fit the image overlay to the map bounds initially
+imageFrameMap.fitBounds(imageBounds);
+
+// Add the image overlay to the image frame map
+imageOverlay.addTo(imageFrameMap);
+
+
+  
 L.control.rainviewer({
     position: 'bottomleft',
     nextButtonText: '>',
