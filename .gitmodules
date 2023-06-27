@@ -1,0 +1,15 @@
+[submodule "Lichtsee"] 
+  path = Lichtsee
+  url = https://github.com/AstrophotoTirol/Lichtsee
+
+[submodule "Mutterbergersee"] 
+  path = Mutterbergersee
+  url = https://github.com/AstrophotoTirol/Mutterbergersee
+
+[submodule "Winklmoos"] 
+  path = Winklmoos
+  url = https://github.com/AstrophotoTirol/Winklmoos
+
+[submodule "Sattelberg"] 
+  path = Sattelberg
+  url = https://github.com/AstrophotoTirol/Sattelberg
