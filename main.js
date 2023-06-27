@@ -134,8 +134,9 @@ L.control.rainviewer({
     positionSliderLabelText: "Hour:",
     opacitySliderLabelText: "Opacity:",
     animationInterval: 500,
-    opacity: 0.5
+    opacity: 0.5,
+    
 }).addTo(map);
-loadStations("https://static.avalanche.report/weather_stations/stations.geojson");
+
 
 
