@@ -30,7 +30,7 @@ let layerControl = L.control.layers({
         maxZoom: 19,
         tileSize: 1024,
         zoomOffset: -2,
-        opacity: 0.5
+        opacity: 1
     }),
 
     "Lichtverschmutzung 2020": L.tileLayer(
@@ -40,11 +40,9 @@ let layerControl = L.control.layers({
         maxZoom: 19,
         tileSize: 1024,
         zoomOffset: -2,
-        opacity: 0.5
+        opacity: 1
     }),},
     {
-    "Wettervorhersage MET Norway": themaLayer.forecast.addTo(map),
-    "ECMWF Windlayer": themaLayer.wind.addTo(map)},{
     
 
 },
@@ -124,8 +122,90 @@ imageFrameMap.fitBounds(imageBounds);
 // Add the image overlay to the image frame map
 imageOverlay.addTo(imageFrameMap);
 
+L.control.Legend({
+    position: "bottomright",
+    title: "Artificial Sky Brightness",
+    column: "1",
+    legends: [{
+        label: "<0.01",
+        type: "image",
+        url: "icons/1.png",
+    },
+    {
+        label: "0.01 - 0.06",
+        type: "image",
+        url: "icons/2.png",
+    },
+    {
+        label: "0.06 - 0.11",
+        type: "image",
+        url: "icons/3.png",
+    },
+    {
+        label: "0.11 - 0.19",
+        type: "image",
+        url: "icons/4.png",
+    },
+    {
+        label: "0.19 - 0.33",
+        type: "image",
+        url: "icons/5.png",
+    },
+    {
+        label: "0.33 - 0.58",
+        type: "image",
+        url: "icons/6.png",
+    },
+    {
+        label: "0.58-1.00",
+        type: "image",
+        url: "icons/7.png",
+    },
+    {
+        label: "1.00 - 1.73",
+        type: "image",
+        url: "icons/8.png",
+    },
+    {
+        label: "1.73 - 3.00",
+        type: "image",
+        url: "icons/9.png",
+    },
+    {
+        label: "3.00 - 5.20",
+        type: "image",
+        url: "icons/10.png",
+    },
+    {
+        label: "5.20 - 9.00",
+        type: "image",
+        url: "icons/11.png",
+    },
+    {
+        label: "9.00 - 15.59",
+        type: "image",
+        url: "icons/12.png",
+    },
+    {
+        label: "15.59 - 27.00",
+        type: "image",
+        url: "icons/13.png",
+    },
+    {
+        label: "27 - 46.77",
+        type: "image",
+        url: "icons/14.png",
+    },
+    {
+        label: ">46.77",
+        type: "image",
+        url: "icons/15.png",
+    }],
+    symbolWidth: "150",
+    symbolHeigh: "100",
+    collapsed: "True"
+}).addTo(map);
 
-  
 L.control.rainviewer({
     position: 'bottomleft',
     nextButtonText: '>',
