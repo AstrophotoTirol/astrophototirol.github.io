@@ -89,7 +89,9 @@ L.marker([47.0166667, 11.129], { icon: mutterbergersee_icon }).addTo(map).bindPo
     <a href = "https://astrophototirol.github.io/Mutterbergersee/" > Hier gehts zum Spot -> </a>
     `).openPopup();
 
-
+ map.eachLayer(function (layer) {
+      layer.closePopup();
+ });
 // Maßstab
 L.control.scale({
     imperial: false,
