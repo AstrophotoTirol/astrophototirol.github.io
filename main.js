@@ -50,8 +50,6 @@ let layerControl = L.control.layers({
 ).addTo(map);
 layerControl.expand();
 
-
-
 //Marker Mutterbergersee
 var mutterbergersee_icon = L.icon({
     iconUrl: 'icons/photospot.png',
