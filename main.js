@@ -15,40 +15,39 @@ let map = L.map("map", {
 
 
 let themaLayer = {
-    forecast: L.featureGroup(),
-    wind: L.featureGroup()
+    lp2016: L.featureGroup(),
+    lp2020: L.featureGroup()
 }
 
 // Hintergrundlayer
 let layerControl = L.control.layers({
     "Esri WorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap").addTo(map),
     "Esri WorldImagery": L.tileLayer.provider("Esri.WorldImagery"),
-    "Lichtverschmutzung 2016": L.tileLayer(
-        'https://djlorenz.github.io/astronomy/lp2016/overlay/tiles/tile_{z}_{x}_{y}.png', {
-        minZoom: 2,
-        maxNativeZoom: 8,
-        maxZoom: 19,
-        tileSize: 1024,
-        zoomOffset: -2,
-        opacity: 1
-    }),
-
-    "Lichtverschmutzung 2020": L.tileLayer(
-        'https://djlorenz.github.io/astronomy/lp2020/overlay/tiles/tile_{z}_{x}_{y}.png', {
-        minZoom: 2,
-        maxNativeZoom: 8,
-        maxZoom: 19,
-        tileSize: 1024,
-        zoomOffset: -2,
-        opacity: 1
-    }),},
+    },
     {
-    
+        "Lichtverschmutzung 2016": themaLayer.lp2016,
+        "Lichtverschmutzung 2020": themaLayer.lp2020}).addTo(map);
+//layerControl.expand();
 
-},
+var lichtverschmutzung16 = L.tileLayer(
+    'https://djlorenz.github.io/astronomy/lp2016/overlay/tiles/tile_{z}_{x}_{y}.png', {
+    minZoom: 2,
+    maxNativeZoom: 8,
+    maxZoom: 19,
+    tileSize: 1024,
+    zoomOffset: -2,
+    opacity: 0.5
+}).addTo(themaLayer.lp2016)
 
-).addTo(map);
-layerControl.expand();
+var lichtverschmutzung20 = L.tileLayer(
+    'https://djlorenz.github.io/astronomy/lp2020/overlay/tiles/tile_{z}_{x}_{y}.png', {
+    minZoom: 2,
+    maxNativeZoom: 8,
+    maxZoom: 19,
+    tileSize: 1024,
+    zoomOffset: -2,
+    opacity: 0.5
+}).addTo(themaLayer.lp2020)
 
 //Marker Mutterbergersee
 var mutterbergersee_icon = L.icon({
